@@ -22,6 +22,6 @@ deployment:
       - git config --global user.email build@circleci.com
       - git config --global user.name CircleCI
       - git status
-      - git add --all
+      - git add -f target
       - git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
       - git push origin gh-pages
