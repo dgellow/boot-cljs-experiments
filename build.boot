@@ -1,5 +1,5 @@
 (set-env!
- :source-paths #{"src"}
+ :source-paths #{"src" "test"}
  :resource-paths #{"html" "build"}
  :dependencies '[
                  ;; React wrapper
@@ -23,7 +23,6 @@
  '[pandeiro.boot-http :refer [serve]])
 
 (deftask dev []
-  (set-env! :source-paths #{"src" "test"})
   (comp (serve :dir "target/")
         (watch)
         (speak)
