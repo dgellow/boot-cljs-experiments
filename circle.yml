@@ -18,10 +18,12 @@ deployment:
     branch: master
     commands:
       - git checkout gh-pages
-      - boot build
+      - git merge master
+      - cp target/index.html ./
+      - cp target/main.js ./
+      - git add --all
       - git config --global user.email build@circleci.com
       - git config --global user.name CircleCI
       - git status
-      - git add -f target
       - git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
       - git push origin gh-pages
