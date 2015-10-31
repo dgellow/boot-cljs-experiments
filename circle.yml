@@ -1,3 +1,7 @@
+machine:
+  jvm:
+    version: oraclejdk8
+
 dependencies:
   pre:
     - wget https://github.com/boot-clj/boot-bin/releases/download/2.4.2/boot.sh
@@ -5,17 +9,14 @@ dependencies:
 
 test:
   override:
-    - BOOT_JVM_OPTIONS="-Xmx3g" boot build
-
-  post:
-    - git checkout gh-pages
-    - BOOT_JVM_OPTIONS="-Xmx3g" boot build
+    -  boot build
 
 deployment:
   production:
     branch: master
     commands:
       - git checkout gh-pages
+      - boot build
       - git config --global user.email build@circleci.com
       - git config --global user.name CircleCI
       - git status
