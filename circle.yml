@@ -5,11 +5,11 @@ dependencies:
 
 test:
   override:
-    - BOOT_JVM_OPTIONS="-Xmx2g" boot build
+    - BOOT_JVM_OPTIONS="-Xmx3g" boot build
 
   post:
     - git checkout gh-pages
-    - BOOT_JVM_OPTIONS="-Xmx2g" boot build
+    - BOOT_JVM_OPTIONS="-Xmx3g" boot build
 
 deployment:
   production:
