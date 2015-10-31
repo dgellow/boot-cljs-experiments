@@ -22,6 +22,8 @@
  '[adzerk.boot-reload :refer [reload]]
  '[pandeiro.boot-http :refer [serve]])
 
+(deftask deps [] identity)
+
 (deftask dev []
   (comp (serve :dir "target/")
         (watch)
