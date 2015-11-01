@@ -27,4 +27,4 @@ deployment:
       - git config --global user.name CircleCI
       - git status
       - git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
-      - git push origin gh-pages
+      - git push -f origin gh-pages
