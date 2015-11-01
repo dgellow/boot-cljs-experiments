@@ -24,10 +24,13 @@
  '[crisptrutski.boot-cljs-test  :refer [test-cljs]]
  '[pandeiro.boot-http :refer [serve]])
 
+(task-options! test-cljs {:js-env :phantom})
+
 (deftask deps [])
 
 (deftask run-tests []
   (set-env! :source-paths #{"src" "test"})
+  (task-options! test-cljs {:exit? true})
   (comp (test-cljs)))
 
 (deftask auto-test []
