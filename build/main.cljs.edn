@@ -1,2 +1,0 @@
-{:requires [com.aztrana.webclient.core]
- :init-fns [com.aztrana.webclient.core/main]}

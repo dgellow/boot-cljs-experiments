@@ -1,2 +1,0 @@
-{:requires [com.aztrana.webclient.tests]
- :init-fns [com.aztrana.webclient.tests/run]}
